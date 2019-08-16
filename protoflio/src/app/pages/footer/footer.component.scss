@@ -1,0 +1,116 @@
+$main-color: #3d405b;
+$sec-color: #eee;
+$third-color: #555;
+$forth-color: #fbfbfb;
+$fifth-color: #bbb;
+$third-color: #8d9e78;
+$blur-color: rgba(238, 238, 238, 0.6);
+$oriang-color: #e07a5f;
+$ninth-color: #cdcdcd;
+
+h3 {
+  text-decoration: underline;
+  margin: 40px 0px 20px 0px;
+  color: $oriang-color;
+}
+.footer {
+  // margin-top: 226px;
+
+  .contact {
+    // display: -webkit-box;
+
+    div {
+      line-height: 24px;
+    //   margin-left: 53px;
+      @media screen and (max-width:767px){
+        text-align: left;
+        margin-left: 30%;    
+      }
+      i {
+        color: $third-color;
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+        text-align: center;
+        margin-right: 15px;
+        transition-duration: 0.3s;
+      }
+
+      span {
+        position: relative;
+        color: #8c8b8b;
+      }
+
+      span::after {
+        content: "";
+        position: absolute;
+        background: $oriang-color;
+        height: 1px;
+        width: 0;
+        bottom: 0;
+        left: 0;
+        transition-duration: 0.3s;
+      }
+
+      a:hover {
+        color: $oriang-color;
+
+        span::after {
+          width: 100%;
+        }
+      }
+
+      &:hover i {
+        color: $oriang-color;
+      }
+    }
+  }
+
+  .follow {
+    width: 100%;
+    margin-top: 60px;
+
+    .box {
+      text-align: center;
+      vertical-align: middle;
+
+      a {
+        display: inline-block;
+        vertical-align: text-bottom;
+
+        &:hover {
+          i {
+            background: $oriang-color;
+            border-radius: 5px;
+            transform: rotate(45deg) scale(0.8);
+          }
+
+          i::before {
+            transform: rotate(-45deg) scale(1.5);
+          }
+        }
+      }
+
+      i {
+        display: inline-block;
+        font-size: 30px;
+        background: $third-color;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        line-height: 60px;
+        color: $forth-color;
+        margin: 0 10px 10px;
+        transition-duration: 0.3s;
+
+        &.fa::before {
+          display: block;
+        }
+      }
+
+      i::before {
+        transition-duration: 0.3s;
+      }
+    }
+  }
+}

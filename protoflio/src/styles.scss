@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+  overflow-x: hidden;
+}
+$main-color: #3d405b;
+$sec-color: #eee;
+$third-color: #555;
+$forth-color: #fbfbfb;
+$fifth-color: #bbb;
+$thix-color: #8d9e78;
+$blur-color: rgba(238, 238, 238, 0.6);
+$oriang-color: #e07a5f;
+$ninth-color: #cdcdcd;
+
+.resume {
+  background: $forth-color;
+  margin: 20px auto;
+  border: 1px solid $fifth-color;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 0 20px -3px $fifth-color;
+  position: relative;
+  display: flex;
+
+  .func {
+    //Instead of the line below you could use @include box-sizing($bs)
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    padding: 30px 25px;
+
+    >div {
+      padding-bottom: 10px;
+
+      &:last-of-type {
+        padding-bottom: 0;
+      }
+    }
+
+    h3 {
+      //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+      transition-duration: 0.3s;
+      margin-top: 0;
+
+      i {
+        color: $forth-color;
+        background: $thix-color;
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+        line-height: 42px;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 50%;
+        text-align: center;
+        vertical-align: middle;
+        margin-right: 8px;
+        //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+        transition-duration: 0.3s;
+      }
+    }
+
+    &:hover>div {
+      //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+      transition-duration: 0.3s;
+
+      &:hover h3 {
+        letter-spacing: 1.6px;
+
+        i {
+          //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+          transform: scale(1.2);
+        }
+      }
+
+      &:not(:hover) {
+        opacity: 0.5;
+      }
+    }
+
+  }
+}

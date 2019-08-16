@@ -1,0 +1,21 @@
+<nav class="text-center">
+  <ul>
+    <a (click)="gotoLinkhome()">home</a>
+    <a (click)="gotoLinkExperience()">Experience</a>
+    <a (click)="gotoLinkSkills()">Skills</a>
+    <a (click)="gotoLinkContact()">Contact</a>
+  </ul>
+ </nav>
+<div class="base row">
+  <div class="profile col-12">
+    <div class="photo"><img src="../../../assets/images/32556524_2112831515640928_131524216569724928_n.jpg" /></div>
+    <div class="info">
+      <h4 class="name">{{info.name}}</h4><small class="job">{{info.job}}</small>
+    </div>
+  </div>
+  <div class="about col-12 text-center">
+    <h3>About me</h3>
+    {{info.about}}<br />
+
+  </div>
+</div>

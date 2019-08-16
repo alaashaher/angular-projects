@@ -1,0 +1,147 @@
+//colors
+$main-color: #3d405b;
+$sec-color: #eee;
+$third-color: #555;
+$forth-color: #fbfbfb;
+$fifth-color: #bbb;
+$third-color: #8d9e78;
+$blur-color: rgba(238, 238, 238, 0.6);
+$oriang-color: #e07a5f;
+$ninth-color: #cdcdcd;
+
+//fonts
+$font: sans-serif;
+
+//@extend-elements
+//original selectors
+//body, html
+%extend_1 {
+  margin: 0;
+  background: $sec-color;
+  font-family: $font;
+  letter-spacing: 0.65px;
+  font-size: 15px;
+  color: $third-color;
+  cursor: default;
+}
+
+//original selectors
+//.resume .func .work ul li, .resume .func .edu ul li
+%extend_2 {
+  position: relative;
+  margin-left: 15px;
+  padding-left: 25px;
+  padding-bottom: 15px;
+}
+
+
+* {
+  outline: none;
+}
+
+body {
+  @extend %extend_1;
+}
+
+html {
+  @extend %extend_1;
+}
+
+a {
+  text-decoration: none;
+  color: $third-color;
+  display: block;
+  //Instead of the line below you could use @include transition-duration($duration-1, $duration-2, $duration-3, $duration-4, $duration-5, $duration-6, $duration-7, $duration-8, $duration-9, $duration-10)
+  transition-duration: 0.3s;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+h3 {
+  color: $main-color;
+  margin: 10px 0;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.base {
+  box-sizing: border-box;
+
+  /* float: left; */
+  width: 103%;
+  height: 200px;
+  padding: 30px 15px;
+  background: $blur-color;
+
+  >div {
+    padding-bottom: 10px;
+
+    &:last-of-type {
+      padding-bottom: 0;
+      z-index: 2;
+    }
+  }
+
+  .profile {
+    background: $third-color;
+    padding: 30px 15px 5px;
+    margin: -30px -15px 45px;
+    position: relative;
+    z-index: 2;
+
+    .info {
+      text-align: center;
+      color: $forth-color;
+
+      .name {
+        margin-top: 10px;
+        margin-bottom: 0;
+        font-size: 1.5em;
+        font-weight: normal;
+      }
+    }
+
+    .photo {
+      text-align: center;
+
+      img {
+        width: 17%;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .profile::after {
+    content: "";
+    position: absolute;
+    background: $third-color;
+    width: 100%;
+    height: 30px;
+    bottom: -15px;
+    left: 0;
+    //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: skewY(-5deg);
+    z-index: -1;
+  }
+
+
+}
+
+nav {
+  background-color: #3e4633;
+
+  ul {
+    display: inline-flex;
+    a {
+      padding: 10px 20px;
+      color: #fff;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
