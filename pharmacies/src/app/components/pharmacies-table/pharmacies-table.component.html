@@ -1,0 +1,15 @@
+
+<input [(ngModel)]="userName" type="text" placeholder="enter the name you want to search">
+<button (click)="FilterTable()"> filter</button>
+<table style="width: 100%;">
+  <tr>
+    <th>name</th>
+    <th>latitude</th>
+    <th>longitude</th>
+  </tr>
+  <tr *ngFor="let PharmaciesValue of pharmaciesTableProvider.PharmaciesData">
+    <td>{{PharmaciesValue.name}}</td>
+    <td>{{PharmaciesValue.geo_point_2d.lat}}</td>
+    <td>{{PharmaciesValue.geo_point_2d.lon}}</td>
+  </tr>
+</table>
