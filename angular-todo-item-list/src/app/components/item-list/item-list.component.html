@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row row-form">
+    <div class="col-lg-3 col-md-5 col-sm-10 cart" *ngFor="let item of itemListProvider.GroupOptions">
+      <div class="row-form row" (click)="showDialog(item.name, item.photo, item.specialist)" label="Show">
+        <img src={{item.photo}} class="cart-photo col-5" />
+        <div class="col-7 cart-data">
+          {{item.name}} <span class="rate"><img src="https://img.icons8.com/color/50/000000/filled-star.png"
+              class="star"> {{item.rate}}</span>
+          <br>
+          <span class="specialist">{{item.specialist}}</span><br>
+          <a href={{item.location}} class="location"><img src="assets/image/location.png" width="20" />Fekerty
+            Online</a><br>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<p-dialog header="FeedBack" [(visible)]="display" [modal]="true" [responsive]="true"
+  [style]="{width: '450px', minWidth: '400px'}" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+  <div class="feedback container">
+    <div class="row text-center">
+      <div class="col-12 text-center give">Give Feedback</div>
+    </div>
+    <div class="row">
+      <div class="col-10" style="display: contents;">
+        <img class="feedback-cart-photo" src={{photo}} />
+        <div class="feedback-data">
+          <div>{{name}}</div>
+          <div class="specialist">{{specialist}}</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-12 text-center">
+      <img src="https://img.icons8.com/color/50/000000/filled-star.png" class="starFeed"> <img
+        src="https://img.icons8.com/color/50/000000/filled-star.png" class="starFeed"> <img
+        src="https://img.icons8.com/color/50/000000/filled-star.png" class="starFeed"> <img
+        src="https://img.icons8.com/color/48/000000/star--v2.png" class="starFeed"><img
+        src="https://img.icons8.com/color/48/000000/star--v2.png" class="starFeed"></div>
+    <label>Feedback</label>
+
+    <textarea>Write Your Feedback</textarea>
+    <div class="row text-center">
+      <button class="btn btn-primary col-12 send-btn" (click)="send()">Send</button>
+      <a class="col-12 send" (click)="send()">No thanks</a>
+    </div>
+  </div>
+  <p-footer>
+    
+  </p-footer>
+</p-dialog>
